@@ -1,0 +1,13 @@
+<project name="HelloWorld2" default="deploy">
+	
+	<echo>Hellow world project level Data types</echo>	
+	
+	
+	<target name="deploy">
+			<echo>This is deploy task</echo>
+		</target>
+	
+
+
+	
+</project>

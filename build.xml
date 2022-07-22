@@ -1,0 +1,38 @@
+<project name="HelloWorld" default="info">
+	
+	<echo>Hellow world project level</echo>	
+	<!-- Threre are 3 methods of calling a property 
+		1.property name and value
+		2.calling from command line -Dname
+		3.From property file
+	-->
+	<property name="myname" value="Seetal"></property>
+	<property name="version" value=""></property>
+	<property file="build.props"></property>
+	
+	<echo>Hello world property file is ${ant.file} ${basedir}</echo>
+	<echo>Receiving values from property file where project name is ${projectname} version is ${buildversion} and URL is ${url}</echo>
+	
+	<!-- ================================= 
+          target: name              
+         ================================= -->
+    <target name="info" depends="compile">
+        <echo>Hello World from Ant build !!!!!! User is ${myname} !!! Version is ${version}</echo>
+    </target>
+	
+	<target name="compile" depends="build">
+			<echo>This is compile task</echo>
+		</target>
+	
+	<target name="build" depends="deploy">
+		<echo>This is build task</echo>
+	</target>
+	
+	<target name="deploy">
+			<echo>This is deploy task</echo>
+		</target>
+	
+
+
+	
+</project>
